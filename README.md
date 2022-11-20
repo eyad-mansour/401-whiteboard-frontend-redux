@@ -1,1 +1,1 @@
-# 401-whiteboard-frontend-redux
+# 401-whiteboard-frontend
