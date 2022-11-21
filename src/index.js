@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import AuthContextProvider from './context/AuthContext';
-import PostContextProvider from './context/PostContext';
-import {ChakraProvider, extendTheme, ColorModeScript} from '@chakra-ui/react';
+import {ChakraProvider, extendTheme} from '@chakra-ui/react';
 import {myNewTheme} from './theme/index';
+import {store} from './app/store';
+import {Provider} from 'react-redux';
 
 const theme = extendTheme();
 
@@ -14,13 +14,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <AuthContextProvider>
-      <PostContextProvider>
-        <ChakraProvider theme={myNewTheme}>
-          <App />
-        </ChakraProvider>
-      </PostContextProvider>
-    </AuthContextProvider>
+    <ChakraProvider theme={myNewTheme}>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </ChakraProvider>
   </React.StrictMode>
 );
 

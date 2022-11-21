@@ -1,5 +1,5 @@
 import {createContext} from 'react';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import axios from 'axios';
 import cookies from 'react-cookies';
 
@@ -44,6 +44,7 @@ const PostContextProvider = (props) => {
     });
     getAllPost();
   };
+
   const addPost = async (e) => {
     e.preventDefault();
     const data = {
