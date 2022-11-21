@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import axios from 'axios';
 import cookies from 'react-cookies';
 import {PostContext} from '../context/PostContext';
-import {HStack, Input, Button, useToast, Badge} from '@chakra-ui/react';
+import {Input, Badge} from '@chakra-ui/react';
 
 export default function AddComment(props) {
   const {getAllPost} = useContext(PostContext);
